@@ -79,7 +79,7 @@ namespace StatExpressionParser
                             operandStack.Push(ParseBoolConstant(parseString,ref start, termsEnd));
                         break;
                         case TermType.AlphaNumeric:
-                        operandStack.Push(ParseAlphaNumeric(parseString,ref start,termsEnd,end));
+                        operandStack.Push(ParseAlphaNumeric(parseString,ref start,termsEnd, FindGroupEnd(parseString, termsEnd, end) + 1));
                         break;
                         case TermType.Operator:
                         oper = ParseOperator(parseString, ref start, termsEnd, prevTermType);
